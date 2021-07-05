@@ -1,0 +1,19 @@
+<div>
+  <div class="p-2">
+    <h2> Bem vindo ao Serpent</h2>
+    <p>aqui vc pode expor suas obras e seus desenhos </p>
+  </div>
+
+
+  <% IO.inspect(@current_user) %>
+  <%= @current_user.email %>
+
+
+
+  <div class="flex flex justify-around mt-2">
+    <span class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> <%= link "Cadastro", to: Routes.user_registration_path(@socket, :new) %>  </span>
+
+    <span class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> <%= link "Login", to: Routes.user_session_path(@socket, :new) %> </span>
+  </div>
+
+</div>

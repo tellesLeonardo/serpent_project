@@ -1,0 +1,45 @@
+<div>
+  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col bg-gray-300">
+    <h2> Login </h2>
+
+    <%= form_for @conn, Routes.user_session_path(@conn, :create), [as: :user], fn f -> %>
+      <%= if @error_message do %>
+        <div class="alert alert-danger">
+          <p><%= @error_message %></p>
+        </div>
+      <% end %>
+
+      <div class="mb-4">
+        <%= label f, :email, class: "block text-grey-600 text-sm font-bold mb-2", for: "email" %>
+        <%= email_input f, :email, id: "email", placeholder: "email", required: true, class: "shadow appearance-none border rounded w-full py-2 px-3 text-grey-700" %>
+      </div>
+
+      <div class="mb-6">
+
+        <%= label f, :password, class: "block text-grey-700 text-sm font-bold mb-2", for: "password" %>
+        <%= password_input f, :password, required: true, class: "shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-700 mb-3", id: "password",  placeholder: "password" %>
+
+        <span class="text-right">
+          <%= label f, :remember_me, "me mantenha logado", class: "inline-flex items-center" %>
+          <%= checkbox f, :remember_me , class: "form-checkbox"%>
+        </span>
+
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div>
+          <%= submit "Entrar", class: "bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+
+          <span class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded" >
+            <%= link "Cadastro", to: Routes.user_registration_path(@conn, :new) %>
+          </span>
+        </div>
+
+        <span class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-700">
+              <%= link "Recuperar senha?", to: Routes.user_reset_password_path(@conn, :new) %>
+        </span>
+      </div>
+    <% end %>
+
+  </div>
+</div>

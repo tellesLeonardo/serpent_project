@@ -52,6 +52,7 @@ defmodule Serpent.MixProject do
       {:sweet_xml, "~> 0.6"},
       {:hackney, "~> 1.9"},
       {:phx_gen_auth, "~> 0.6.0", only: [:dev], runtime: false},
+      {:faker, "~> 0.16.0", only: :test},
       {:plug_cowboy, "~> 2.0"}
     ]
   end

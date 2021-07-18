@@ -10,11 +10,12 @@ config :bcrypt_elixir, :log_rounds, 1
 # Run `mix help test` for more information.
 config :serpent, Serpent.Repo,
   username: "postgres",
-  password: "postgres",
-  database: "serpent_test#{System.get_env("MIX_TEST_PARTITION")}",
+  password: "T5sbHDJPfGk2QBqRlD02UBbC6Vb23JR9ePoJvX5SuxCKFOildxyTDIHJ56hIRyHX",
+  database: "the_arte_two_test",
   hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
-
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10,
+  port: 5434
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :serpent, SerpentWeb.Endpoint,
